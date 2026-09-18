@@ -1,0 +1,51 @@
+﻿export const sembalunReferencePoints = [
+  {
+    id: "sembalun-lawang",
+    name: "Sembalun Lawang",
+    latitude: -8.34685,
+    longitude: 116.49578,
+    elevation: 1063,
+  },
+  {
+    id: "pos-1",
+    name: "Pos 1",
+    latitude: -8.36141,
+    longitude: 116.47579,
+    elevation: 1429,
+  },
+  {
+    id: "pos-2",
+    name: "Pos 2",
+    latitude: -8.36524,
+    longitude: 116.46621,
+    elevation: 1513,
+  },
+  {
+    id: "pos-3",
+    name: "Pos 3",
+    latitude: -8.37608,
+    longitude: 116.45794,
+    elevation: 1773,
+  },
+  {
+    id: "pos-4",
+    name: "Pos 4 Cemara Siu",
+    latitude: -8.338999,
+    longitude: 116.476527,
+    elevation: 2096,
+  },
+  {
+    id: "plawangan-sembalun",
+    name: "Plawangan Sembalun",
+    latitude: -8.38613,
+    longitude: 116.4426,
+    elevation: 2639,
+  },
+  {
+    id: "summit-rinjani",
+    name: "Summit Rinjani",
+    latitude: -8.41166,
+    longitude: 116.45813,
+    elevation: 3726,
+  },
+] as const;
