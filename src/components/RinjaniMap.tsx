@@ -1158,6 +1158,95 @@ export function RinjaniMap() {
         </button>
       </div>
 
+      <style>{`
+        .rinjani-mobile-trek-hud {
+          display: none;
+        }
+
+        @media (max-width: 768px) {
+          .rinjani-selected-panel.is-trekking {
+            display: none !important;
+          }
+
+          .rinjani-mobile-trek-hud {
+            position: absolute;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            z-index: 20;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 16px;
+            background: rgba(7, 26, 36, 0.90);
+            border: 1px solid rgba(200,155,60,0.35);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+            backdrop-filter: blur(14px);
+          }
+
+          .rinjani-mobile-trek-info {
+            flex: 1;
+            min-width: 0;
+          }
+
+          .rinjani-mobile-trek-title {
+            font-size: 9px;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+            color: #C89B3C;
+          }
+
+          .rinjani-mobile-trek-point {
+            margin-top: 3px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #fff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          .rinjani-mobile-trek-actions {
+            display: flex;
+            gap: 6px;
+          }
+
+          .rinjani-mobile-trek-actions button {
+            height: 34px;
+            padding: 0 10px;
+            border-radius: 9px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.06);
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+          }
+        }
+      `}</style>
+
+      {selectedPoint && isTrekPlaying && (
+        <div className="rinjani-mobile-trek-hud">
+          <div className="rinjani-mobile-trek-info">
+            <div className="rinjani-mobile-trek-title">
+              {routeMode === "senaru" ? "Senaru Trek" : routeMode === "torean" ? "Torean Trek" : "Sembalun Trek"}
+            </div>
+            <div className="rinjani-mobile-trek-point">
+              {selectedPoint.name}
+            </div>
+          </div>
+
+          <div className="rinjani-mobile-trek-actions">
+            <button type="button" onClick={stopTrek}>
+              Pause
+            </button>
+            <button type="button" onClick={resetTrek}>
+              Reset
+            </button>
+          </div>
+        </div>
+      )}
+
       {selectedPoint && (
         <div
           className={
