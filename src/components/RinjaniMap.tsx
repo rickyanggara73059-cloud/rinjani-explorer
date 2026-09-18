@@ -1160,6 +1160,11 @@ export function RinjaniMap() {
 
       {selectedPoint && (
         <div
+          className={
+            isTrekPlaying
+              ? "rinjani-selected-panel is-trekking"
+              : "rinjani-selected-panel"
+          }
           style={{
             position: "absolute",
             left: 24,
